@@ -8,6 +8,11 @@
   <title>Animais Fantasticos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script>
+    document.documentElement.className += ' js';
+  </script>
+
 </head>
 
 <body>
@@ -22,7 +27,7 @@
 
   <section class="grid-section" id="animais">
     <h1 class="titulo">Animais Fantásticos</h1>
-    <ul class="animais-lista">
+    <ul class="animais-lista js-tabmenu">
       <li>
         <img src="./img/imagem1.jpg" alt="Raposa">
       </li>
@@ -42,7 +47,7 @@
         <img src="./img/imagem6.jpg" alt="Leão">
       </li>
     </ul>
-    <div class="animais-descricao">
+    <div class="animais-descricao js-tabcontent">
       <section>
         <h2>Raposa</h2>
         <p>Raposas são pequenos a médios mamíferos onívoros pertencentes a vários gêneros da família Canidae. As raposas têm o crânio achatado, orelhas triangulares verticais, focinho pontiagudo e ligeiramente arrebitado e uma cauda longa e espessa.</p>
@@ -77,7 +82,7 @@
 
   <section class="grid-section faq" id="faq">
     <h1 class="titulo">FAQ</h1>
-    <dl class="faq-lista">
+    <dl class="faq-lista js-accordion">
       <dt>Qual a idade dos animais</dt>
       <dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem neque quis saepe, quaerat quibusdam, ex nam beatae corporis numquam maxime corrupti harum possimus autem omnis.</dd>
       <dt>Eles são fantásticos?</dt>
