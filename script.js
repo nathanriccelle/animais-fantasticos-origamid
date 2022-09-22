@@ -52,3 +52,48 @@ function initAccordion() {
   }
 }
 initAccordion();
+
+//Deixar o scroll suave ao clicar no menu
+function initScrollSuave() {
+  const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]');
+
+  function scrollToSection(event) {
+    event.preventDefault();
+    const href = event.currentTarget.getAttribute("href");
+    const section = document.querySelector(href);
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+
+  //Percorre por cada link e pega o clique de cada
+  linksInternos.forEach((links) => {
+    links.addEventListener("click", scrollToSection);
+  });
+}
+initScrollSuave();
+
+//Animação das seções
+function initAnimacaoScroll() {
+  const sections = document.querySelectorAll(".js-scroll");
+
+  if (sections.length) {
+    const windowMetade = window.innerHeight * 0.7; //Pega 70% da altura da tela
+
+    function animaScroll() {
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top; //Pega o topo da tela
+        const isSectionVisible = sectionTop - windowMetade < 0;
+        if (isSectionVisible) {
+          section.classList.add("ativo"); //Ativa a classe - CSS
+        } else {
+          section.classList.remove("ativo"); //remove a classe - CSS
+        }
+      });
+    }
+    window.addEventListener("scroll", animaScroll);
+    animaScroll();
+  }
+}
+initAnimacaoScroll();
